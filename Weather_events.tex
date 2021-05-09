@@ -1,0 +1,405 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\#Reproducible Research Course Project 2
+
+\#\#Analysis of the U.S. National Oceanic and Atmospheric
+Administration?s (NOAA) storm database
+
+\#\#\#\#This project explores the NOAA storm database, which tracks
+major storms and weather events, to address the most severe types of
+weather events in the USA, which caused greatest damage to human
+population in terms of fatalities/injuries and economic loss during the
+years 1950 - 2011.
+
+\#\#\#\#There are two goals of this analysis:
+
+\begin{itemize}
+\tightlist
+\item
+  identify the weather events that are most harmful with respect to
+  population health
+\item
+  identify the weather events that have the greatest economic
+  consequences.
+\end{itemize}
+
+\#\#\#\#Based on our analysis, we conclude that TORNADOS and FLOODS are
+most harmful weather events in the USA in terms of the risk to human
+health and economic impact.
+
+\#\#Data Processing
+
+\#\#\#\#The data source is in the form of a comma-separated-value file
+compressed via the bzip2 algorithm to reduce its size. It is possible to
+download the source file from the course web site:
+\href{https://d396qusza40orc.cloudfront.net/repdata\%2Fdata\%2FStormData.csv.bz2}{Storm
+Data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# downloading data}
+\NormalTok{Url\_data }\OtherTok{\textless{}{-}} \StringTok{"https://d396qusza40orc.cloudfront.net/repdata\%2Fdata\%2FStormData.csv.bz2"}
+
+\NormalTok{File\_data }\OtherTok{\textless{}{-}} \StringTok{"StormData.csv.bz2"}
+\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{file.exists}\NormalTok{(File\_data)) \{}
+        \FunctionTok{download.file}\NormalTok{(Url\_data, File\_data, }\AttributeTok{mode =} \StringTok{"wb"}\NormalTok{)}
+\NormalTok{\}}
+
+\CommentTok{\# reading data}
+\NormalTok{Raw\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\AttributeTok{file =}\NormalTok{ File\_data, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{sep=}\StringTok{","}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#\#\#Additional documentation on the database was provided here:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://d396qusza40orc.cloudfront.net/repdata\%2Fpeer2_doc\%2Fpd01016005curr.pdf}{National
+  Weather Service Storm Data Documentation}
+\item
+  \href{https://d396qusza40orc.cloudfront.net/repdata\%2Fpeer2_doc\%2FNCDC\%20Storm\%20Events-FAQ\%20Page.pdf}{National
+  Climatic Data Center Storm Events FAQ}
+\item
+  \href{https://www.coursera.org/learn/reproducible-research/discussions/weeks/4/threads/IdtP_JHzEeaePQ71AQUtYw}{Mentor?s
+  comments in the Discussion Forum on the Course web-site}
+\end{itemize}
+
+\#\#\#\#1. According to NOAA, the data recording start from Jan.~1950.
+At that time, they recorded only one event type - tornado. They added
+more events gradually, and only from Jan 1996 they started recording all
+events type. Since our objective is comparing the effects of different
+weather events, we need only to include events that started not earlier
+than Jan 1996.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# subsetting by date}
+\NormalTok{Main\_data }\OtherTok{\textless{}{-}}\NormalTok{ Raw\_data}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{BGN\_DATE }\OtherTok{\textless{}{-}} \FunctionTok{strptime}\NormalTok{(Raw\_data}\SpecialCharTok{$}\NormalTok{BGN\_DATE, }\StringTok{"\%m/\%d/\%Y \%H:\%M:\%S"}\NormalTok{)}
+\NormalTok{Main\_data }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(Main\_data, BGN\_DATE }\SpecialCharTok{\textgreater{}} \StringTok{"1995{-}12{-}31"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#\#\#2. Based on the above mentioned documentation and preliminary
+exploration of raw data with ?str?, ?names?, ?table?, ?dim?, ?head?,
+?range? and other similar functions we can conclude that there are 7
+variables we are interested in regarding the two questions.
+
+\#\#\#\#Namely: EVTYPE, FATALITIES, INJURIES, PROPDMG, PROPDMGEXP,
+CROPDMG, CROPDMGEXP.
+
+\#\#\#\#Therefore, we can limit our data to these variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Main\_data }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(Main\_data, }\AttributeTok{select =} \FunctionTok{c}\NormalTok{(EVTYPE, FATALITIES, INJURIES, PROPDMG, PROPDMGEXP, CROPDMG, CROPDMGEXP))}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#\#\#Contents of data now are as follows:
+
+EVTYPE ? type of event\\
+FATALITIES ? number of fatalities\\
+INJURIES ? number of injuries\\
+PROPDMG ? the size of property damage\\
+PROPDMGEXP - the exponent values for `PROPDMG' (property damage)\\
+CROPDMG - the size of crop damage\\
+CROPDMGEXP - the exponent values for `CROPDMG' (crop damage)
+
+\#\#\#\#3. There are almost 1000 unique event types in EVTYPE column.
+Therefore, it is better to limit database to a reasonable number. We can
+make it by capitalizing all letters in EVTYPE column as well as
+subsetting only non-zero data regarding our target numbers.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#cleaning event types names}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{EVTYPE }\OtherTok{\textless{}{-}} \FunctionTok{toupper}\NormalTok{(Main\_data}\SpecialCharTok{$}\NormalTok{EVTYPE)}
+
+\CommentTok{\# eliminating zero data}
+\NormalTok{Main\_data }\OtherTok{\textless{}{-}}\NormalTok{ Main\_data[Main\_data}\SpecialCharTok{$}\NormalTok{FATALITIES }\SpecialCharTok{!=}\DecValTok{0} \SpecialCharTok{|} 
+\NormalTok{                       Main\_data}\SpecialCharTok{$}\NormalTok{INJURIES }\SpecialCharTok{!=}\DecValTok{0} \SpecialCharTok{|} 
+\NormalTok{                       Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMG }\SpecialCharTok{!=}\DecValTok{0} \SpecialCharTok{|} 
+\NormalTok{                       Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMG }\SpecialCharTok{!=}\DecValTok{0}\NormalTok{, ]}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#\#\#Now we have 186 unique event types and it seems like something
+to work with.
+
+\#\#Population health data processing
+
+\#\#\#\#We aggregate fatalities and injuries numbers in order to
+identify TOP-10 events contributing the total people loss:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Health\_data }\OtherTok{\textless{}{-}} \FunctionTok{aggregate}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(FATALITIES, INJURIES) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ EVTYPE, }\AttributeTok{data =}\NormalTok{ Main\_data, }\AttributeTok{FUN=}\NormalTok{sum)}
+\NormalTok{Health\_data}\SpecialCharTok{$}\NormalTok{PEOPLE\_LOSS }\OtherTok{\textless{}{-}}\NormalTok{ Health\_data}\SpecialCharTok{$}\NormalTok{FATALITIES }\SpecialCharTok{+}\NormalTok{ Health\_data}\SpecialCharTok{$}\NormalTok{INJURIES}
+\NormalTok{Health\_data }\OtherTok{\textless{}{-}}\NormalTok{ Health\_data[}\FunctionTok{order}\NormalTok{(Health\_data}\SpecialCharTok{$}\NormalTok{PEOPLE\_LOSS, }\AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{), ]}
+\NormalTok{Top10\_events\_people }\OtherTok{\textless{}{-}}\NormalTok{ Health\_data[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{,]}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(Top10\_events\_people, }\AttributeTok{format =} \StringTok{"markdown"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}llrrr@{}}
+\toprule
+& EVTYPE & FATALITIES & INJURIES & PEOPLE\_LOSS \\
+\midrule
+\endhead
+149 & TORNADO & 1511 & 20667 & 22178 \\
+39 & EXCESSIVE HEAT & 1797 & 6391 & 8188 \\
+48 & FLOOD & 414 & 6758 & 7172 \\
+107 & LIGHTNING & 651 & 4141 & 4792 \\
+153 & TSTM WIND & 241 & 3629 & 3870 \\
+46 & FLASH FLOOD & 887 & 1674 & 2561 \\
+146 & THUNDERSTORM WIND & 130 & 1400 & 1530 \\
+182 & WINTER STORM & 191 & 1292 & 1483 \\
+69 & HEAT & 237 & 1222 & 1459 \\
+88 & HURRICANE/TYPHOON & 64 & 1275 & 1339 \\
+\bottomrule
+\end{longtable}
+
+\#\#Economic consequences data processing
+
+\#\#\#\#The number/letter in the exponent value columns (PROPDMGEXP and
+CROPDMGEXP) represents the power of ten (10\^{}The number). It means
+that the total size of damage is the product of PROPDMG and CROPDMG and
+figure 10 in the power corresponding to exponent value.
+
+\#\#\#\#Exponent values are:\\
+- numbers from one to ten\\
+- letters (B or b = Billion, M or m = Million, K or k = Thousand, H or h
+= Hundred)\\
+- and symbols ``-'', ``+'' and ``?'' which refers to less than, greater
+than and low certainty. We have the option to ignore these three symbols
+altogether.
+
+\#\#\#\#We transform letters and symbols to numbers:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"[Hh]"}\NormalTok{, }\StringTok{"2"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"[Kk]"}\NormalTok{, }\StringTok{"3"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"[Mm]"}\NormalTok{, }\StringTok{"6"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"[Bb]"}\NormalTok{, }\StringTok{"9"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{+"}\NormalTok{, }\StringTok{"1"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{?|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{{-}|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{ "}\NormalTok{, }\StringTok{"0"}\NormalTok{,  Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP)}
+
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"[Hh]"}\NormalTok{, }\StringTok{"2"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"[Kk]"}\NormalTok{, }\StringTok{"3"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"[Mm]"}\NormalTok{, }\StringTok{"6"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"[Bb]"}\NormalTok{, }\StringTok{"9"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{+"}\NormalTok{, }\StringTok{"1"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{{-}|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{?|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{ "}\NormalTok{, }\StringTok{"0"}\NormalTok{, Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP)}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP)}
+
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP[}\FunctionTok{is.na}\NormalTok{(Main\_data}\SpecialCharTok{$}\NormalTok{PROPDMGEXP)] }\OtherTok{\textless{}{-}} \DecValTok{0}
+\NormalTok{Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP[}\FunctionTok{is.na}\NormalTok{(Main\_data}\SpecialCharTok{$}\NormalTok{CROPDMGEXP)] }\OtherTok{\textless{}{-}} \DecValTok{0}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#\#\#At last, we create new values of total property damage and total
+crop damage for analysis (we need ?dplr? package for that).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#creating total damage values}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\NormalTok{Main\_data }\OtherTok{\textless{}{-}} \FunctionTok{mutate}\NormalTok{(Main\_data, }
+                    \AttributeTok{PROPDMGTOTAL =}\NormalTok{ PROPDMG }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{10} \SpecialCharTok{\^{}}\NormalTok{ PROPDMGEXP), }
+                    \AttributeTok{CROPDMGTOTAL =}\NormalTok{ CROPDMG }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{10} \SpecialCharTok{\^{}}\NormalTok{ CROPDMGEXP))}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#\#\#Now we aggregate property and crop damage numbers in order to
+identify TOP-10 events contributing the total economic loss:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Economic\_data }\OtherTok{\textless{}{-}} \FunctionTok{aggregate}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(PROPDMGTOTAL, CROPDMGTOTAL) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ EVTYPE, }\AttributeTok{data =}\NormalTok{ Main\_data, }\AttributeTok{FUN=}\NormalTok{sum)}
+\NormalTok{Economic\_data}\SpecialCharTok{$}\NormalTok{ECONOMIC\_LOSS }\OtherTok{\textless{}{-}}\NormalTok{ Economic\_data}\SpecialCharTok{$}\NormalTok{PROPDMGTOTAL }\SpecialCharTok{+}\NormalTok{ Economic\_data}\SpecialCharTok{$}\NormalTok{CROPDMGTOTAL}
+\NormalTok{Economic\_data }\OtherTok{\textless{}{-}}\NormalTok{ Economic\_data[}\FunctionTok{order}\NormalTok{(Economic\_data}\SpecialCharTok{$}\NormalTok{ECONOMIC\_LOSS, }\AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{), ]}
+\NormalTok{Top10\_events\_economy }\OtherTok{\textless{}{-}}\NormalTok{ Economic\_data[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{,]}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(Top10\_events\_economy, }\AttributeTok{format =} \StringTok{"markdown"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}llrrr@{}}
+\toprule
+& EVTYPE & PROPDMGTOTAL & CROPDMGTOTAL & ECONOMIC\_LOSS \\
+\midrule
+\endhead
+48 & FLOOD & 143944833550 & 4974778400 & 148919611950 \\
+88 & HURRICANE/TYPHOON & 69305840000 & 2607872800 & 71913712800 \\
+141 & STORM SURGE & 43193536000 & 5000 & 43193541000 \\
+149 & TORNADO & 24616945710 & 283425010 & 24900370720 \\
+66 & HAIL & 14595143420 & 2476029450 & 17071172870 \\
+46 & FLASH FLOOD & 15222203910 & 1334901700 & 16557105610 \\
+86 & HURRICANE & 11812819010 & 2741410000 & 14554229010 \\
+32 & DROUGHT & 1046101000 & 13367566000 & 14413667000 \\
+152 & TROPICAL STORM & 7642475550 & 677711000 & 8320186550 \\
+83 & HIGH WIND & 5247860360 & 633561300 & 5881421660 \\
+\bottomrule
+\end{longtable}
+
+\#\#Results
+
+\#\#\#\#Analyzing population health impact on the graph one can conclude
+that TORNADOS, EXCESSIVE HEAT and FLOOD are the main contributors to
+deaths and injuries out of all event types of weather events.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#plotting health loss}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\NormalTok{g }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ Top10\_events\_people, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{reorder}\NormalTok{(EVTYPE, PEOPLE\_LOSS), }\AttributeTok{y =}\NormalTok{ PEOPLE\_LOSS))}
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Total people loss in USA by weather events in 1996{-}2011"}\NormalTok{)}
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Number of fatalities and injuries"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Event Type"}\NormalTok{)}
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{+} \FunctionTok{coord\_flip}\NormalTok{()}
+\FunctionTok{print}\NormalTok{(g)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Weather_events_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\#\#\#\#Analyzing economic impact on the graph one can conclude that
+FLOOD, HURRICANE/TYPHOON and STORM SURGE are the main contributors to
+severe economic consequences out of all event types of weather events.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#plotting economic loss}
+\NormalTok{g }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ Top10\_events\_economy, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{reorder}\NormalTok{(EVTYPE, ECONOMIC\_LOSS), }\AttributeTok{y =}\NormalTok{ ECONOMIC\_LOSS))}
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Total economic loss in USA by weather events in 1996{-}2011"}\NormalTok{)}
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Size of property and crop loss"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Event Type"}\NormalTok{)}
+\NormalTok{g }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{+} \FunctionTok{coord\_flip}\NormalTok{()}
+\FunctionTok{print}\NormalTok{(g)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Weather_events_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\end{document}
